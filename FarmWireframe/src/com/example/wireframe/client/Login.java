@@ -9,7 +9,9 @@ package com.example.wireframe.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.shared.UmbrellaException;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyDownEvent;
+import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
@@ -29,6 +31,7 @@ public class Login
 		private VerticalPanel pLoginMain = new VerticalPanel();
 		private TabPanel pLoginTab = new TabPanel();
 		private FlexTable ftLoginScreen = new FlexTable();
+		private boolean isLoggedIn;
 		
 		/**
 		 * Provides the panel portion for the login screen
@@ -61,21 +64,40 @@ public class Login
 			{
 				public void onClick(ClickEvent event)
 				{
-					try
-					{
-						
-					}
-					catch(UmbrellaException e)
-					{
-						e.printStackTrace();
-					}
+					setIsLoggedIn(true);
+					removePanel();
 				}
 			};
+			
+			KeyDownHandler khLoginSumbit = new KeyDownHandler()
+			{
+
+				@Override
+				public void onKeyDown(KeyDownEvent event) 
+				{
+					if(event.getNativeKeyCode() == KeyCodes.KEY_ENTER)
+					{
+						removePanel();
+					}
+					
+				}
+				
+			};
+			tbPassword.addKeyDownHandler(khLoginSumbit);
 			bLoginSubmit.addClickHandler(chLoginSubmit);
 			
 			return pLoginTab;
 		}
 		
+		protected void removePanel() 
+		{
+			String sUsername = tbUsername.getText();
+			MessagePane mpRemoveConfirm = new MessagePane();
+			
+			mpRemoveConfirm.showDialog("Welcome " + sUsername+"!");
+			this.getPanel().removeFromParent();
+		}
+
 		/**
 		 * Provides the logout panel to be added to the root panel
 		 * If this panel is needed, use the overloaded method to provide the proper panel
@@ -92,7 +114,25 @@ public class Login
 			
 			pLogoutLayout.add(lLougoutMessage);
 			pLogoutLayout.add(bOK);
+			this.setIsLoggedIn(false);
 			
 			return pLogoutLayout;
+		}
+		/**
+		 *  Returns whether or not user is logged in
+		 * @return Returns boolean isLoggedIn
+		 */
+		public boolean getIsLoggedIn() 
+		{
+			return isLoggedIn;
+		}
+
+		/**
+		 *  Sets boolean isLoggedIn
+		 * @param isLoggedIn 
+		 */
+		public void setIsLoggedIn(boolean isLoggedIn) 
+		{
+			this.isLoggedIn = isLoggedIn;
 		}
 }
