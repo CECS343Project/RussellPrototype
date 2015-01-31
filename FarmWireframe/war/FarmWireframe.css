@@ -1,0 +1,35 @@
+/** Add css rules here for your application. */
+body 
+{
+	background-color: #b0c4de;
+}
+.loginText
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding-left: 90px;
+	font-size: 200%;
+	
+}
+
+.loginLabels
+{
+	margin-left: 45px;
+}
+
+
+.textFields
+{
+	margin-bottom: 5px;
+	padding-left: 3px;
+	margin-right:45px;
+}
+
+.mainPanel
+{
+	margin-top: .5cm;
+	border-style: inset;
+	border-width: 5px;
+	margin-bottom: .5cm;
+}
