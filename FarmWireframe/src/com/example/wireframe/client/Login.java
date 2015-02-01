@@ -12,6 +12,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.event.dom.client.KeyDownHandler;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
@@ -22,6 +23,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Login 
 {
+		private static final int REFRESH_INTERVAL = 5000;
 		private TextBox tbUsername = new TextBox();
 		private PasswordTextBox tbPassword = new PasswordTextBox();
 		private Button bLoginSubmit = new Button("Login");
@@ -31,7 +33,7 @@ public class Login
 		private VerticalPanel pLoginMain = new VerticalPanel();
 		private TabPanel pLoginTab = new TabPanel();
 		private FlexTable ftLoginScreen = new FlexTable();
-		private boolean isLoggedIn;
+		private boolean isLoggedIn = false;
 		
 		/**
 		 * Provides the panel portion for the login screen
@@ -64,6 +66,7 @@ public class Login
 			{
 				public void onClick(ClickEvent event)
 				{
+					
 					setIsLoggedIn(true);
 					removePanel();
 				}
@@ -135,4 +138,5 @@ public class Login
 		{
 			this.isLoggedIn = isLoggedIn;
 		}
+
 }
