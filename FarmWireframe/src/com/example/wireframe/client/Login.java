@@ -23,7 +23,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Login 
 {
-		private static final int REFRESH_INTERVAL = 5000;
 		private TextBox tbUsername = new TextBox();
 		private PasswordTextBox tbPassword = new PasswordTextBox();
 		private Button bLoginSubmit = new Button("Login");
@@ -82,9 +81,7 @@ public class Login
 					{
 						removePanel();
 					}
-					
 				}
-				
 			};
 			tbPassword.addKeyDownHandler(khLoginSumbit);
 			bLoginSubmit.addClickHandler(chLoginSubmit);
