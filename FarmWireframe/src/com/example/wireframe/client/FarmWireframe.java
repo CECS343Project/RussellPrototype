@@ -8,7 +8,6 @@
 package com.example.wireframe.client;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.*;
 
 
