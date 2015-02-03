@@ -35,11 +35,12 @@ public class FarmWireframe implements EntryPoint {
 		Home homeScreen = new Home();
 		Patient patientScreen = new Patient();
 		PatientData dataScreen = new PatientData();
+		Settings settings = new Settings();
 		
 		tpMainMenu.add(homeScreen.getPanel(), "Home");
 		tpMainMenu.add(patientScreen.getPanel(), "New Patient");
 		tpMainMenu.add(dataScreen.getPanel(), "Search Patients");
-
+		tpMainMenu.add(settings.getPanel(),"Settings");
 		tpMainMenu.add(loginScreen.getPanel(1),"Logout");
 		tpMainMenu.setWidth("100%");
 		tpMainMenu.setHeight("100%");
