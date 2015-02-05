@@ -31,7 +31,7 @@ body
 	margin-bottom: .5cm;
 	background-color:#E0E0E0;
 }
-.gwt-TabLayoutPanelBottom
+.gwt-TabPanelBottom .gwt-TabPanel .gwt-TabBar
 {
-	border: none !important; 
+	border: none; 
 }

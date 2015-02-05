@@ -44,7 +44,8 @@ public class FarmWireframe implements EntryPoint {
 		tpMainMenu.add(loginScreen.getPanel(1),"Logout");
 		tpMainMenu.setWidth("100%");
 		tpMainMenu.setHeight("100%");
-		tpMainMenu.addStyleName("gwt-TabLayoutPanelBottom");
+		tpMainMenu.addStyleName("gwt-TabPanelBottom");
+		
 		
 		RootPanel.get("mainapplication").add(tpMainMenu);
 		
