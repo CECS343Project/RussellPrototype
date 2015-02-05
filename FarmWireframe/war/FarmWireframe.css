@@ -10,10 +10,6 @@ body
 	margin-bottom: 10px;
 	padding-left: 90px;
 	font-size: 200%;
-	background-color:blue;
-	border:solid;
-	border-style: inset;
-	border-width: 5px;
 }
 
 .loginLabels
